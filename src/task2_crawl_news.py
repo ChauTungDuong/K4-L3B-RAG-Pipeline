@@ -21,25 +21,49 @@ from pathlib import Path
 DATA_DIR = Path(__file__).parent.parent / "data" / "landing" / "news"
 
 ARTICLE_URLS = [
-    # TODO: Thêm ít nhất 5 public URL.
+    "https://ts.hust.edu.vn/tin-tuc/quy-che-tuyen-sinh-dai-hoc-nam-2026",
+    "https://ts.hust.edu.vn/tin-tuc/quy-dinh-ve-phuong-thuc-xet-tuyen-tai-nang-nam-2026",
+    "https://ts.hust.edu.vn/tin-tuc/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026",
+    "https://ts.hust.edu.vn/tin-tuc/du-kien-phuong-an-tuyen-sinh-dai-hoc-2026-cua-bach-khoa-ha-noi",
+    "https://ts.hust.edu.vn/tin-tuc/bach-khoa-ha-noi-cong-bo-nguong-dau-vao-cac-nganh-vi-mach-ban-dan-nam-2026"
 ]
 
-
 async def crawl_article(url: str) -> dict:
-    # TODO: Implement crawling logic.
-    #
-    # from datetime import datetime
-    # from crawl4ai import AsyncWebCrawler
-    #
-    # async with AsyncWebCrawler() as crawler:
-    #     result = await crawler.arun(url=url)
-    #     return {
-    #         "url": url,
-    #         "title": result.metadata.get("title", "Unknown"),
-    #         "date_crawled": datetime.now().isoformat(),
-    #         "content_markdown": result.markdown,
-    #     }
-    raise NotImplementedError("Implement crawl_article")
+    import urllib.request
+    import ssl
+    from bs4 import BeautifulSoup
+    from markdownify import markdownify as md
+    
+    ctx = ssl.create_default_context()
+    ctx.check_hostname = False
+    ctx.verify_mode = ssl.CERT_NONE
+
+    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+    res = urllib.request.urlopen(req, context=ctx, timeout=10)
+    page_html = res.read().decode('utf-8')
+    
+    soup = BeautifulSoup(page_html, "html.parser")
+    title_tag = soup.find("h1", class_="title")
+    title = title_tag.text.strip() if title_tag else "Unknown Title"
+    
+    date_tag = soup.find("p", class_="date-created")
+    date_str = date_tag.text.strip() if date_tag else ""
+    
+    desc_tag = soup.find("div", class_="description")
+    if desc_tag:
+        content = md(str(desc_tag))
+    else:
+        content = md(page_html)
+        
+    import html
+    content = html.unescape(content)
+        
+    return {
+        "url": url,
+        "title": html.unescape(title),
+        "date_crawled": date_str,
+        "content_markdown": content.strip()
+    }
 
 
 async def crawl_all() -> None:
