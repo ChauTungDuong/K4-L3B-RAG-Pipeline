@@ -31,7 +31,7 @@ def download_documents() -> None:
     ctx = ssl.create_default_context()
     ctx.check_hostname = False
     ctx.verify_mode = ssl.CERT_NONE
-    
+
     sources = {
         "quy-che-tuyen-sinh.pdf": "https://hust.edu.vn/uploads/sys/tuyen-sinh/2026_05/4740_qd-dhbk-qcts.pdf",
         "thong-tin-tuyen-sinh-dai-hoc-2026.pdf": "https://hust.edu.vn/uploads/sys/tuyen-sinh/2023_06/thong-tin-tuyen-sinh-dai-hoc-2026f.pdf",

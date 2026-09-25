@@ -1,6 +1,6 @@
-# nguong-diem-vi-mach-ban-dan
+# th_ng_b_o_v__ng__ng_ng_nh_vi_m_ch_b_n_d_n_n_m_2026_14.07.2026_final
 
-**File nguồn:** `nguong-diem-vi-mach-ban-dan.pdf`
+**File nguồn:** `th_ng_b_o_v__ng__ng_ng_nh_vi_m_ch_b_n_d_n_n_m_2026_14.07.2026_final.pdf`
 
 ---
 
