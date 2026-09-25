@@ -1,0 +1,82 @@
+[
+  {
+    "question": "Thí sinh đăng ký xét tuyển vào các ngành Vi mạch bán dẫn năm 2026 của Đại học Bách khoa Hà Nội cần đạt tối thiểu bao nhiêu điểm môn Toán?",
+    "expected_answer": "Thí sinh cần đạt tối thiểu 7,5 điểm môn Toán dựa trên kết quả kỳ thi Tốt nghiệp THPT thực tế (không bao gồm điểm quy đổi chứng chỉ tiếng Anh) để đủ điều kiện đăng ký vào các ngành đào tạo Vi mạch bán dẫn năm 2026.",
+    "expected_context": "Chiều nay (14/7), Hội đồng tuyển sinh Đại học Bách khoa Hà Nội thông báo ngưỡng đảm bảo chất lượng đầu vào đối với các chương trình đào tạo thuộc lĩnh vực Vi mạch bán dẫn năm 2026. Theo đó, thí sinh cần đạt tối thiểu 7,5 điểm môn Toán để có đủ điều kiện đăng ký vào các ngành đào tạo trọng điểm liên quan đến công nghệ bán dẫn."
+  },
+  {
+    "question": "Ngưỡng đảm bảo chất lượng đầu vào lĩnh vực Vi mạch bán dẫn năm 2026 áp dụng cho những chương trình đào tạo nào của Đại học Bách khoa Hà Nội?",
+    "expected_answer": "Mức điểm sàn này áp dụng cho 3 chương trình đào tạo mũi nhọn: ET1 (Kỹ thuật Điện tử - Viễn thông), ET-E9 (Hệ thống nhúng thông minh và IoT - Chương trình tiên tiến), và MS2 (Kỹ thuật Vi điện tử và Công nghệ nano).",
+    "expected_context": "Cụ thể, mức điểm sàn này áp dụng cho 3 chương trình đào tạo mũi nhọn của trường bao gồm: ET1: Kỹ thuật Điện tử - Viễn thông. ET-E9: Hệ thống nhúng thông minh và IoT (Chương trình tiên tiến). MS2: Kỹ thuật Vi điện tử và Công nghệ nano."
+  },
+  {
+    "question": "Tổng điểm 3 môn trong tổ hợp xét tuyển yêu cầu tối thiểu là bao nhiêu đối với các ngành Vi mạch bán dẫn năm 2026?",
+    "expected_answer": "Thí sinh phải đạt tổng điểm 3 môn trong tổ hợp xét tuyển từ 22,75 điểm trở lên.",
+    "expected_context": "Tổng điểm xét tuyển: Thí sinh phải đạt tổng điểm 3 môn trong tổ hợp xét tuyển từ 22,75 điểm trở lên. Điểm môn Toán: Phải đạt tối thiểu từ 7,5 điểm trở lên."
+  },
+  {
+    "question": "Phương thức Xét tuyển tài năng (XTTN) năm 2026 của Đại học Bách khoa Hà Nội bao gồm những diện nào?",
+    "expected_answer": "Phương thức XTTN năm 2026 gồm 3 diện: a) Xét tuyển thẳng thí sinh đạt thành tích cao trong các kỳ thi cấp quốc gia hoặc quốc tế (diện 1.1); b) Xét tuyển theo chứng chỉ quốc tế SAT, ACT, A-Level, AP và IB (diện 1.2); c) Xét tuyển theo hồ sơ năng lực kết hợp phỏng vấn (diện 1.3).",
+    "expected_context": "Quy định về Phương thức XTTN năm 2026 áp dụng cho thí sinh đăng ký xét tuyển vào các chương trình đào tạo đại học chính quy của Đại học Bách khoa Hà Nội theo phương thức XTTN, bao gồm: a) Xét tuyển thẳng thí sinh đạt thành tích cao trong các kỳ thi cấp quốc gia hoặc quốc tế theo quy định của Bộ Giáo dục và Đào tạo (XTTN diện 1.1); b) Xét tuyển theo chứng chỉ quốc tế bao gồm các chứng chỉ SAT, ACT, A-Level, AP và IB (XTTN diện 1.2); c) Xét tuyển theo hồ sơ năng lực kết hợp phỏng vấn (XTTN diện 1.3)."
+  },
+  {
+    "question": "Thí sinh xét tuyển tài năng diện 1.2 vào Đại học Bách khoa Hà Nội có thể sử dụng những chứng chỉ quốc tế nào?",
+    "expected_answer": "Thí sinh có thể sử dụng các chứng chỉ quốc tế bao gồm: SAT, ACT, A-Level, AP và IB.",
+    "expected_context": "Xét tuyển theo chứng chỉ quốc tế bao gồm các chứng chỉ SAT, ACT, A-Level, AP và IB (XTTN diện 1.2)."
+  },
+  {
+    "question": "Dự kiến tổng chỉ tiêu tuyển sinh đại học chính quy năm 2026 của Đại học Bách khoa Hà Nội là bao nhiêu?",
+    "expected_answer": "Tổng chỉ tiêu tuyển sinh đại học chính quy năm 2026 dự kiến giữ ổn định khoảng 9.880 sinh viên (hoặc khoảng 9.700 đến 9.880 sinh viên cho 68 chương trình đào tạo).",
+    "expected_context": "1. Thông tin chung: Ổn định tổng chỉ tiêu tuyển sinh, khoảng 9.880 sinh viên. Giữ ổn định 3 phương thức tuyển sinh."
+  },
+  {
+    "question": "Ba phương thức tuyển sinh năm 2026 của Đại học Bách khoa Hà Nội và tỷ lệ chỉ tiêu dự kiến tương ứng là gì?",
+    "expected_answer": "Ba phương thức tuyển sinh gồm: Phương thức Xét tuyển tài năng (XTTN) khoảng 20% chỉ tiêu; Phương thức xét tuyển theo kết quả kỳ thi Đánh giá tư duy (ĐGTD) khoảng 30% chỉ tiêu; Phương thức xét tuyển theo kết quả thi tốt nghiệp THPT khoảng 50% chỉ tiêu.",
+    "expected_context": "Giữ ổn định 3 phương thức tuyển sinh: 1) Phương thức Xét tuyển tài năng (XTTN) khoảng 20% chỉ tiêu; 2) Phương thức xét tuyển theo kết quả kỳ thi Đánh giá tư duy (ĐGTD) khoảng 30% chỉ tiêu; 3) Phương thức xét tuyển theo điểm thi tốt nghiệp THPT khoảng 50% chỉ tiêu."
+  },
+  {
+    "question": "Kỳ thi Đánh giá tư duy (TSA) của Đại học Bách khoa Hà Nội gồm những phần thi nào và thời gian làm bài ra sao?",
+    "expected_answer": "Kỳ thi TSA gồm 3 phần thi: Tư duy Toán học (60 phút), Tư duy Đọc hiểu (30 phút) và Tư duy Khoa học/Giải quyết vấn đề (60 phút), với tổng thời gian làm bài là 150 phút dưới hình thức trắc nghiệm trên máy tính, thang điểm tối đa là 100 điểm.",
+    "expected_context": "Cấu trúc bài thi Đánh giá tư duy gồm ba phần: Tư duy Toán học (60 phút), Tư duy Đọc hiểu (30 phút) và Tư duy Khoa học/Giải quyết vấn đề (60 phút). Toàn bộ bài thi thi trên máy tính dưới hình thức trắc nghiệm với thang điểm 100."
+  },
+  {
+    "question": "Theo chính sách hỗ trợ học bổng Nghị định 179, mức học bổng 5.500.000 đồng/tháng dành cho đối tượng sinh viên nào tại Bách khoa Hà Nội?",
+    "expected_answer": "Mức 5.500.000 đồng/tháng dành cho sinh viên các chương trình đào tạo tài năng thuộc danh mục ưu tiên (gồm 7 chương trình tài năng như Khoa học máy tính, Kỹ thuật điều khiển và tự động hóa, Điện tử - viễn thông, Cơ điện tử, Cơ khí, Logistics, Kỹ thuật hóa học).",
+    "expected_context": "Mức 5.500.000 đồng/tháng: Dành cho sinh viên các chương trình đào tạo tài năng thuộc danh mục ưu tiên. Tại Đại học Bách khoa Hà Nội, nếu các sinh viên học tập tại các lớp tài năng của những ngành thuộc danh mục ưu tiên, các bạn sẽ nhận được mức hỗ trợ cao nhất này. Từ năm 2026, 7 chương trình tài năng Bách khoa Hà Nội nhận học bổng mức 5.500.000 đồng/tháng."
+  },
+  {
+    "question": "Mức học bổng hàng tháng dành cho sinh viên ngành vi mạch bán dẫn theo Nghị định 179 tại Đại học Bách khoa Hà Nội là bao nhiêu?",
+    "expected_answer": "Mức học bổng hàng tháng là 4.200.000 đồng/tháng dành cho sinh viên ngành vi mạch bán dẫn và các ngành khoa học cơ bản.",
+    "expected_context": "Mức 4.200.000 đồng/tháng: Dành cho sinh viên ngành vi mạch bán dẫn và các ngành khoa học cơ bản. Hiện tại có 2 chương trình đại học và 1 chương trình kỹ sư chuyên sâu tại Đại học Bách khoa Hà Nội thuộc ngành vi mạch bán dẫn nhận mức học bổng 4.200.000 đồng/tháng, gồm: Kỹ thuật Điện tử - Viễn thông (ET1), Hệ thống nhúng thông minh và IoT (tăng cường tiếng Nhật) (ET-E9), chương trình Kỹ sư chuyên sâu Thiết kế vi mạch."
+  },
+  {
+    "question": "Thí sinh xét tuyển bằng điểm thi cần thỏa mãn điều kiện gì để được cấp học bổng theo Nghị định 179?",
+    "expected_answer": "Tổng điểm môn Toán và hai môn khác trong tổ hợp phải đạt mức 22,50 trở lên trên thang điểm 30 (điểm thi thực tế, không tính điểm ưu tiên) và thí sinh phải nằm trong nhóm 30% những người có điểm trúng tuyển cao nhất của ngành học đó trên toàn quốc trong năm 2026.",
+    "expected_context": "Với những thí sinh xét tuyển bằng điểm thi, Nghị định yêu cầu tổng điểm môn Toán và hai môn khác trong tổ hợp (Vật lý, Hóa học, Sinh học, Tiếng Anh) phải đạt mức 22,50 trở lên trên thang điểm 30. Điểm số này là điểm thi thực tế, không tính các loại điểm ưu tiên theo khu vực hoặc đối tượng. Một điều kiện đi kèm là thí sinh phải nằm trong nhóm 30% những người có điểm trúng tuyển cao nhất của ngành học đó trên phạm vi toàn quốc trong năm 2026."
+  },
+  {
+    "question": "Để duy trì học bổng theo Nghị định 179, sinh viên cần tích lũy bao nhiêu tín chỉ và đạt kết quả học tập thế nào?",
+    "expected_answer": "Sinh viên phải duy trì kết quả học tập tích lũy ở mức khá trở lên. Sau năm học đầu tiên, sinh viên cần tích lũy tối thiểu 24 tín chỉ; các năm tiếp theo yêu cầu tăng lên mức tối thiểu 28 tín chỉ cho mỗi năm học.",
+    "expected_context": "Để bảo đảm việc nhận học bổng được công bằng và có tác dụng thúc đẩy tinh thần học tập, Nhà nước quy định sinh viên phải duy trì kết quả học tập tích lũy ở mức khá trở lên. Sau năm học đầu tiên, sinh viên cần tích lũy tối thiểu 24 tín chỉ. Các năm tiếp theo, yêu cầu này tăng lên mức 28 tín chỉ cho mỗi năm học."
+  },
+  {
+    "question": "Mức điểm sàn ngành Vi mạch bán dẫn năm 2026 có được tính bao gồm điểm quy đổi từ các chứng chỉ tiếng Anh không?",
+    "expected_answer": "Không. Mức điểm này được tính hoàn toàn dựa trên điểm thi Tốt nghiệp THPT thực tế, không bao gồm điểm quy đổi từ các chứng chỉ tiếng Anh.",
+    "expected_context": "Một lưu ý quan trọng dành cho các thí sinh là mức điểm này được tính hoàn toàn dựa trên điểm thi Tốt nghiệp THPT thực tế, không bao gồm điểm quy đổi từ các chứng chỉ tiếng Anh."
+  },
+  {
+    "question": "Thí sinh tham gia các vòng thi của cuộc thi Đường lên đỉnh Olympia được tính bao nhiêu điểm thành tích trong phương thức XTTN?",
+    "expected_answer": "Thí sinh tham gia vòng thi năm được tính 50 điểm, tham gia vòng thi quý được tính 40 điểm, tham gia vòng thi tháng được tính 30 điểm.",
+    "expected_context": "3 Thành tích tại cuộc thi Đường lên đỉnh Olympia quy định tại điểm c khoản 1 Điều 4: 3.1 Tham gia vòng thi năm 50; 3.2 Tham gia vòng thi quý 40; 3.3 Tham gia vòng thi tháng 30."
+  },
+  {
+    "question": "Chứng chỉ tiếng Anh IELTS từ 7.0 trở lên được tính bao nhiêu điểm trong bảng điểm thành tích chứng chỉ tiếng Anh của phương thức XTTN?",
+    "expected_answer": "Chứng chỉ tiếng Anh IELTS từ 7.0 trở lên được tính mức điểm cao nhất là 5 điểm.",
+    "expected_context": "4 Chứng chỉ tiếng Anh IELTS hoặc tương đương: 4.1 7.0 trở lên 5; 4.2 6.5 4; 4.3 6.0 3; 4.4 5.5 2; 4.5 5.0 1."
+  },
+  {
+    "question": "Thí sinh đoạt giải nào trong kỳ thi chọn học sinh giỏi quốc gia sẽ được xét cấp học bổng theo Nghị định 179 ngay khi nhập học?",
+    "expected_answer": "Thí sinh đạt giải Nhất, Nhì hoặc Ba trong kỳ thi chọn học sinh giỏi quốc gia hoặc quốc tế các môn Toán, Vật lý, Hóa học, Sinh học, Tin học (xác lập trong thời gian 03 năm tính đến thời điểm xét tuyển) sẽ được xét cấp học bổng ngay khi nhập học.",
+    "expected_context": "Thí sinh đạt giải Nhất, Nhì hoặc Ba trong kỳ thi chọn học sinh giỏi quốc gia hoặc quốc tế các môn Toán, Vật lý, Hóa học, Sinh học, Tin học sẽ được xét cấp học bổng ngay khi nhập học. Các thành tích này cần được xác lập trong thời gian 03 năm tính tới thời điểm xét tuyển."
+  }
+]
