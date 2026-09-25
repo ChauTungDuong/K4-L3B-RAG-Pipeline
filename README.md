@@ -82,3 +82,24 @@ pytest tests/test_acceptance.py -q
 # Toàn bộ
 pytest -q
 ```
+
+## Demo tuyển sinh có giải thích từng bước
+
+`app.py` là trang Streamlit cho một trường và một kỳ tuyển sinh. Tab **Bài toán & pipeline** giải thích luồng; tab **Demo từng bước** hiển thị Dense, BM25, RRF, quyết định fallback theo cosine score gốc, đoạn tài liệu đưa vào LLM và citation. Tab **Đánh giá A/B** chỉ hiện số liệu sau khi chạy đánh giá thật.
+
+Sau khi nhóm thu thập dữ liệu, chạy Task 1–4 theo thứ tự ở trên và cấu hình `.env` với `LLM_PROVIDER`, `LLM_MODEL` cùng API key tương ứng. PageIndex là tùy chọn; muốn dùng cloud fallback thì điền `PAGEINDEX_API_KEY` và `PAGEINDEX_CHAT_MODEL` phù hợp với key LLM. PDF chính sách nằm trong `data/landing/legal/` sẽ được upload một lần, document ID được cache trong `.cache/`.
+
+Dùng Python 3.10–3.13 theo `pyproject.toml`. Với PageIndex fallback, dự án dùng PageIndex Python SDK 0.2.19; nếu thiếu key hoặc dịch vụ không trả trang có citation, pipeline giữ kết quả hybrid và generation có thể từ chối xác minh.
+
+```bash
+python -m src.task4_chunking_indexing
+streamlit run app.py
+```
+
+Đánh giá A/B dùng cùng golden dataset (ít nhất 15 câu hỏi), `top_k`, prompt, generator và evaluator. Script đặt `score_threshold=0` ở cả hai cấu hình để tắt fallback trong phép so sánh retrieval; PageIndex được demo riêng.
+
+```bash
+python -m src.evaluate_ab
+```
+
+Kết quả chi tiết được ghi vào `group_project/evaluation/results.json` và được UI đọc trực tiếp. Sau khi xem ba ca kém nhất và đối chiếu nguồn thật, điền số liệu cùng phân tích vào `group_project/evaluation/RESULT.md` và `reports/RESULT.md`. Khi chưa có corpus hoặc API key, UI báo trạng thái thiếu dữ liệu và không hiển thị kết quả giả.
