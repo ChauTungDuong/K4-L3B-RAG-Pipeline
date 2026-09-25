@@ -12,6 +12,7 @@ chạy lại pipeline không tạo dữ liệu trùng. Task 5 phải dùng chung
 """
 
 from pathlib import Path
+from functools import lru_cache
 
 
 STANDARDIZED_DIR = Path(__file__).parent.parent / "data" / "standardized"
@@ -28,10 +29,14 @@ EMBEDDING_DIM = 384
 COLLECTION_NAME = "rag_documents"
 
 
-def embed_texts(texts: list[str]) -> list[list[float]]:
+@lru_cache(maxsize=1)
+def get_embedding_model():
     from sentence_transformers import SentenceTransformer
-    model = SentenceTransformer(EMBEDDING_MODEL)
-    return model.encode(texts).tolist()
+    return SentenceTransformer(EMBEDDING_MODEL)
+
+
+def embed_texts(texts: list[str]) -> list[list[float]]:
+    return get_embedding_model().encode(texts).tolist()
 
 def get_collection():
     """Mở Chroma collection dùng cosine distance."""

@@ -12,6 +12,7 @@ from src.trace_presentation import fusion_rows, search_rows
 
 ROOT = Path(__file__).parent
 EVALUATION_PATH = ROOT / "group_project" / "evaluation" / "results.json"
+GOLDEN_PATH = ROOT / "group_project" / "evaluation" / "golden_dataset.json"
 STANDARDIZED_DIR = ROOT / "data" / "standardized"
 
 st.set_page_config(page_title="RAG tuyển sinh | Lab 08", page_icon="🎓", layout="wide")
@@ -113,8 +114,24 @@ def render_evaluation() -> None:
         "Dense-only (A) và Hybrid + RRF (B) dùng cùng corpus, generator, prompt và top_k. "
         "Fallback được tắt trong phép đo này để chỉ còn chiến lược truy xuất là biến thay đổi."
     )
+    try:
+        golden = json.loads(GOLDEN_PATH.read_text(encoding="utf-8"))
+        if not isinstance(golden, list):
+            raise ValueError("Golden dataset phải là một danh sách")
+    except (OSError, ValueError):
+        golden = []
+        st.warning("Chưa đọc được golden dataset. Kiểm tra file JSON của bộ câu hỏi tham chiếu.")
+    st.metric("Câu hỏi tham chiếu", len(golden))
+    if golden:
+        with st.expander("Xem các câu hỏi tham chiếu"):
+            st.dataframe(
+                [{"#": index, "Câu hỏi": item.get("question", ""),
+                  "Đáp án kỳ vọng": item.get("expected_answer", "")}
+                 for index, item in enumerate(golden, 1)],
+                hide_index=True, use_container_width=True,
+            )
     if not EVALUATION_PATH.exists():
-        st.info("Chưa có kết quả đánh giá thật. Sau khi chốt corpus và ít nhất 15 câu hỏi, chạy script đánh giá để tạo results.json.")
+        st.info("Đã có bộ câu hỏi tham chiếu; chưa chạy đánh giá A/B. Chạy `python -m src.evaluate_ab` sau khi xác nhận index và LLM để tạo results.json.")
         return
     try:
         payload = json.loads(EVALUATION_PATH.read_text(encoding="utf-8"))

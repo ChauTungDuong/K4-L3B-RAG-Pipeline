@@ -9,7 +9,7 @@
 - **Lớp / Nhóm:** K4-L3B
 - **Vai trò:** Đội trưởng (Team Leader) — Phụ trách Kiến trúc Pipeline, Generation & UI
 - **Repository:** https://github.com/ChauTungDuong/K4-L3B-RAG-Pipeline.git
-- **Nhánh làm việc chính:** `main` và `feature/pipeline-and-ui`
+- **Nhánh làm việc chính:** `ChauTungDuong` và `main`
 
 ---
 
@@ -20,10 +20,10 @@
 | **Quản trị Repo & Setup** | Thiết lập repository, phân chia kiến trúc zero-conflict, tối ưu hóa dependencies pyproject.toml | `TEAMMATES.md`<br>`HUONG_DAN_CHIA_VIEC.md`<br>`pyproject.toml` | Done |
 | **Task 7 — Reranking RRF** | Cài đặt Reciprocal Rank Fusion theo rank, giữ nguyên input | `src/task7_reranking.py`<br>`tests/test_lab_visual_flow.py` | Code và unit test hoàn thành |
 | **Task 8 — Vectorless Fallback** | Tích hợp PageIndex có cache PDF, timeout và ánh xạ trang được trích dẫn về SearchResult | `src/task8_pageindex_vectorless.py` | Code và unit test hoàn thành; cần key để thử dịch vụ thật |
-| **Task 9 — Retrieval Pipeline** | Tích hợp dense, BM25, RRF một lần, fallback theo best dense score; thêm trace để minh họa từng bước | `src/task9_retrieval_pipeline.py` | Code và unit test hoàn thành; chờ index thật |
-| **Task 10 — LLM Generation** | Reorder, context có ID nguồn, gọi provider theo `.env`, kiểm tra citation và safe refusal | `src/task10_generation.py` | Code và unit test hoàn thành; cần key để thử LLM thật |
-| **Chatbot UI (Streamlit)** | Trang giải thích pipeline, hiển thị hai danh sách search, RRF, fallback, evidence và citation | `app.py`<br>`src/trace_presentation.py` | Code hoàn thành; cần môi trường Streamlit và corpus để thử trực quan |
-| **Evaluation A/B & Báo cáo** | Viết script đo A/B với cùng dữ liệu, prompt, top_k, evaluator; lưu case-level results và 4 metrics | `src/evaluate_ab.py`<br>`group_project/evaluation/results.json` (sinh khi chạy) | Script hoàn thành; chưa thể đo vì golden dataset và corpus còn trống |
+| **Task 9 — Retrieval Pipeline** | Tích hợp dense, BM25, RRF một lần, fallback theo best dense score; thêm trace để minh họa từng bước | `src/task9_retrieval_pipeline.py` | Đã thử trên Chroma index 828 chunks; Dense, BM25 và Hybrid đều trả kết quả |
+| **Task 10 — LLM Generation** | Reorder, context có ID nguồn, gọi provider theo `.env`, kiểm tra citation và safe refusal | `src/task10_generation.py` | Đã thử LLM thật với câu hỏi golden: trả lời 7,5 điểm môn Toán, dẫn đúng `news/article_05.md::chunk-1` |
+| **Chatbot UI (Streamlit)** | Trang giải thích pipeline, hiển thị hai danh sách search, RRF, fallback, evidence và citation; hiển thị bộ câu hỏi tham chiếu | `app.py`<br>`src/trace_presentation.py`<br>`.streamlit/config.toml` | Streamlit AppTest render 3 tab, 19 tài liệu và 16 câu hỏi, không có exception; tắt file watcher gây nghẽn trang |
+| **Evaluation A/B & Báo cáo** | Viết script đo A/B với cùng dữ liệu, prompt, top_k, evaluator; lưu case-level results và 4 metrics | `src/evaluate_ab.py`<br>`group_project/evaluation/results.json` (sinh khi chạy) | Golden dataset có 16 câu hỏi; phép đo thật bị Gemini HTTP 429 nên chưa có điểm A/B và chưa tạo `results.json` |
 
 ---
 
@@ -41,9 +41,10 @@
 
 ## 4. Kiểm thử và kết quả
 
-- **Các test đã kiểm tra:** `python -m unittest discover -s tests -p test_lab_visual_flow.py -v` — 11/11 đạt; `pytest tests/test_contracts.py -k "rrf or retrieve or reorder or generation" -q` — 6/6 đạt. `python -m py_compile` và `git diff --check` cũng đạt.
-- **Kiểm tra toàn repo:** `tests/test_contracts.py` còn 3 lỗi ở Task 4–6 (phần dữ liệu/search của Tuấn Anh); `tests/test_acceptance.py` còn 5 lỗi do corpus, golden dataset và `group_project/evaluation/RESULT.md` chưa có. Vì vậy chưa đạt điều kiện nộp bài.
-- **Chưa kiểm tra end-to-end:** Máy hiện dùng Python 3.14, vượt phạm vi `pyproject.toml` (`<3.14`); chưa cài Streamlit và chưa có corpus tuyển sinh hoặc API key. Do đó chưa khẳng định UI hoặc PageIndex/LLM chạy với dịch vụ thật.
+- **Các test đã kiểm tra:** `python -m unittest discover -s tests -p test_lab_visual_flow.py -v` — 11/11 đạt; chạy toàn bộ `pytest -q -p no:cacheprovider` trên `.venv` Python 3.13 — 30 đạt, 1 chưa đạt vì báo cáo đánh giá nhóm chưa có. Streamlit AppTest render 3 tab không có exception.
+- **Dữ liệu và index:** Corpus Đại học Bách khoa Hà Nội 2026 có 19 file Markdown; Task 4 tạo 828 chunks trong Chroma. Truy vấn thực trả Dense, BM25 và Hybrid; câu hỏi đầu tiên trong golden dataset được trả lời có citation hợp lệ.
+- **Đánh giá còn thiếu:** Golden dataset có 16 câu hỏi. Đánh giá A/B thật bị giới hạn HTTP 429 từ Gemini, chưa tạo được `group_project/evaluation/results.json` và `group_project/evaluation/RESULT.md`. Không có số liệu điểm nào được suy đoán hoặc điền thay.
+- **Môi trường demo:** Dùng `.venv` Python 3.13; Streamlit đã khởi động và trả HTTP 200. Chưa kiểm tra PageIndex với dịch vụ cloud thật.
 - **Xử lý đã được unit test:** RRF không mutate đầu vào; PageIndex lỗi không làm retrieval crash; câu trả lời thiếu citation trả safe refusal.
 
 ---
