@@ -1,6 +1,6 @@
-# quy-dinh-xttn
+# qui-dinh-ve-xttn-nam-2026-ky
 
-**File nguồn:** `quy-dinh-xttn.pdf`
+**File nguồn:** `qui-dinh-ve-xttn-nam-2026-ky.pdf`
 
 ---
 

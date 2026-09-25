@@ -1,150 +1,100 @@
 # quy-dinh-dhbk-cap-nhat
 
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
+**File nguồn:** `quy-dinh-dhbk-cap-nhat.pdf`
+
+Nội dung quy định/chính sách tuyển sinh trích xuất từ quy-dinh-dhbk-cap-nhat.pdf.
 # quy-dinh-dhbk-cap-nhat
 
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
+**File nguồn:** `quy-dinh-dhbk-cap-nhat.pdf`
+
+Nội dung quy định/chính sách tuyển sinh trích xuất từ quy-dinh-dhbk-cap-nhat.pdf.
 # quy-dinh-dhbk-cap-nhat
 
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
+**File nguồn:** `quy-dinh-dhbk-cap-nhat.pdf`
+
+Nội dung quy định/chính sách tuyển sinh trích xuất từ quy-dinh-dhbk-cap-nhat.pdf.
 # quy-dinh-dhbk-cap-nhat
 
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
+**File nguồn:** `quy-dinh-dhbk-cap-nhat.pdf`
+
+Nội dung quy định/chính sách tuyển sinh trích xuất từ quy-dinh-dhbk-cap-nhat.pdf.
 # quy-dinh-dhbk-cap-nhat
 
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
+**File nguồn:** `quy-dinh-dhbk-cap-nhat.pdf`
+
+Nội dung quy định/chính sách tuyển sinh trích xuất từ quy-dinh-dhbk-cap-nhat.pdf.
 # quy-dinh-dhbk-cap-nhat
 
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
+**File nguồn:** `quy-dinh-dhbk-cap-nhat.pdf`
+
+Nội dung quy định/chính sách tuyển sinh trích xuất từ quy-dinh-dhbk-cap-nhat.pdf.
 # quy-dinh-dhbk-cap-nhat
 
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
+**File nguồn:** `quy-dinh-dhbk-cap-nhat.pdf`
+
+Nội dung quy định/chính sách tuyển sinh trích xuất từ quy-dinh-dhbk-cap-nhat.pdf.
 # quy-dinh-dhbk-cap-nhat
 
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
+**File nguồn:** `quy-dinh-dhbk-cap-nhat.pdf`
+
+Nội dung quy định/chính sách tuyển sinh trích xuất từ quy-dinh-dhbk-cap-nhat.pdf.
 # quy-dinh-dhbk-cap-nhat
 
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
+**File nguồn:** `quy-dinh-dhbk-cap-nhat.pdf`
+
+Nội dung quy định/chính sách tuyển sinh trích xuất từ quy-dinh-dhbk-cap-nhat.pdf.
 # quy-dinh-dhbk-cap-nhat
 
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
+**File nguồn:** `quy-dinh-dhbk-cap-nhat.pdf`
+
+Nội dung quy định/chính sách tuyển sinh trích xuất từ quy-dinh-dhbk-cap-nhat.pdf.
 # quy-dinh-dhbk-cap-nhat
 
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
+**File nguồn:** `quy-dinh-dhbk-cap-nhat.pdf`
+
+Nội dung quy định/chính sách tuyển sinh trích xuất từ quy-dinh-dhbk-cap-nhat.pdf.
 # quy-dinh-dhbk-cap-nhat
 
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
+**File nguồn:** `quy-dinh-dhbk-cap-nhat.pdf`
+
+Nội dung quy định/chính sách tuyển sinh trích xuất từ quy-dinh-dhbk-cap-nhat.pdf.
 # quy-dinh-dhbk-cap-nhat
 
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
+**File nguồn:** `quy-dinh-dhbk-cap-nhat.pdf`
+
+Nội dung quy định/chính sách tuyển sinh trích xuất từ quy-dinh-dhbk-cap-nhat.pdf.
 # quy-dinh-dhbk-cap-nhat
 
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
+**File nguồn:** `quy-dinh-dhbk-cap-nhat.pdf`
+
+Nội dung quy định/chính sách tuyển sinh trích xuất từ quy-dinh-dhbk-cap-nhat.pdf.
 # quy-dinh-dhbk-cap-nhat
 
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
+**File nguồn:** `quy-dinh-dhbk-cap-nhat.pdf`
+
+Nội dung quy định/chính sách tuyển sinh trích xuất từ quy-dinh-dhbk-cap-nhat.pdf.
 # quy-dinh-dhbk-cap-nhat
 
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
+**File nguồn:** `quy-dinh-dhbk-cap-nhat.pdf`
+
+Nội dung quy định/chính sách tuyển sinh trích xuất từ quy-dinh-dhbk-cap-nhat.pdf.
 # quy-dinh-dhbk-cap-nhat
 
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
+**File nguồn:** `quy-dinh-dhbk-cap-nhat.pdf`
+
+Nội dung quy định/chính sách tuyển sinh trích xuất từ quy-dinh-dhbk-cap-nhat.pdf.
 # quy-dinh-dhbk-cap-nhat
 
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
+**File nguồn:** `quy-dinh-dhbk-cap-nhat.pdf`
+
+Nội dung quy định/chính sách tuyển sinh trích xuất từ quy-dinh-dhbk-cap-nhat.pdf.
 # quy-dinh-dhbk-cap-nhat
 
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
+**File nguồn:** `quy-dinh-dhbk-cap-nhat.pdf`
+
+Nội dung quy định/chính sách tuyển sinh trích xuất từ quy-dinh-dhbk-cap-nhat.pdf.
 # quy-dinh-dhbk-cap-nhat
 
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
-# quy-dinh-dhbk-cap-nhat
+**File nguồn:** `quy-dinh-dhbk-cap-nhat.pdf`
 
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
-# quy-dinh-dhbk-cap-nhat
-
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
-# quy-dinh-dhbk-cap-nhat
-
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
-# quy-dinh-dhbk-cap-nhat
-
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
-# quy-dinh-dhbk-cap-nhat
-
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
-# quy-dinh-dhbk-cap-nhat
-
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
-# quy-dinh-dhbk-cap-nhat
-
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
-# quy-dinh-dhbk-cap-nhat
-
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
-# quy-dinh-dhbk-cap-nhat
-
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
-# quy-dinh-dhbk-cap-nhat
-
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
-# quy-dinh-dhbk-cap-nhat
-
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
-# quy-dinh-dhbk-cap-nhat
-
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
-# quy-dinh-dhbk-cap-nhat
-
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
-# quy-dinh-dhbk-cap-nhat
-
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
-# quy-dinh-dhbk-cap-nhat
-
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
-# quy-dinh-dhbk-cap-nhat
-
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
-# quy-dinh-dhbk-cap-nhat
-
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
-# quy-dinh-dhbk-cap-nhat
-
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
-# quy-dinh-dhbk-cap-nhat
-
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
-# quy-dinh-dhbk-cap-nhat
-
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
-# quy-dinh-dhbk-cap-nhat
-
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
-# quy-dinh-dhbk-cap-nhat
-
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
-# quy-dinh-dhbk-cap-nhat
-
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
-# quy-dinh-dhbk-cap-nhat
-
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
-# quy-dinh-dhbk-cap-nhat
-
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
-# quy-dinh-dhbk-cap-nhat
-
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
-# quy-dinh-dhbk-cap-nhat
-
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
-# quy-dinh-dhbk-cap-nhat
-
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
-# quy-dinh-dhbk-cap-nhat
-
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
-# quy-dinh-dhbk-cap-nhat
-
-Content converted from quy-dinh-dhbk-cap-nhat.pdf
+Nội dung quy định/chính sách tuyển sinh trích xuất từ quy-dinh-dhbk-cap-nhat.pdf.
