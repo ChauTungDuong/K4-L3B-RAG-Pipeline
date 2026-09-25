@@ -43,6 +43,10 @@ pytest -q
 streamlit run app.py
 ```
 
+Trong tab **Demo từng bước**, mở **Nhật ký xử lý** của từng câu trả lời để xem Dense → BM25 → RRF → fallback → context → LLM đang ở bước nào, số đoạn và thời gian từng bước. Sidebar hiển thị các sự kiện gần đây; nhật ký đầy đủ nằm ở `.cache/rag_demo.log` (không chứa API key hoặc nguyên văn câu hỏi). Khi LLM bị giới hạn HTTP 429, giao diện ghi rõ lỗi này và trả lời an toàn.
+
+`EMBEDDING_MODEL` trong `.env` phải khớp với model dùng để tạo Chroma index. Đổi model thì cần tạo lại index tương ứng; cấu hình mẫu dùng `all-MiniLM-L6-v2`.
+
 ## Lộ trình 3 giờ
 
 | Mốc                  | Thời gian | Kết quả cần có                           |

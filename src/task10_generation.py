@@ -23,6 +23,7 @@ except ImportError:
         return False
 
 from .task9_retrieval_pipeline import retrieve_with_trace
+from .pipeline_observability import ProgressCallback, new_request_id, record_event, safe_error
 
 
 load_dotenv()
@@ -127,40 +128,74 @@ def generate_with_citation(query: str, top_k: int = TOP_K) -> dict:
     return result
 
 
-def generate_with_trace(query: str, top_k: int = TOP_K) -> tuple[dict, dict]:
+def generate_with_trace(
+    query: str, top_k: int = TOP_K, on_step: ProgressCallback | None = None,
+) -> tuple[dict, dict]:
     """Generate an answer and return the exact retrieval trace used for it."""
-    chunks, trace = retrieve_with_trace(query, top_k=top_k)
+    chunks, trace = retrieve_with_trace(query, top_k=top_k, on_step=on_step)
+    events = trace.setdefault("events", [])
+    request_id = trace.setdefault("request_id", new_request_id())
+
+    def emit(stage: str, status: str, message: str, **details) -> None:
+        record_event(events, request_id, stage, status, message, on_step, **details)
+
     refusal = {"answer": SAFE_REFUSAL, "sources": [], "retrieval_source": "none"}
     if not chunks or (
         trace.get("fallback_attempted") and trace.get("decision") != "pageindex"
     ):
         trace["generation_status"] = "no_evidence"
+        emit("generation", "skipped", "Không đủ bằng chứng để gọi LLM", count=len(chunks))
         return refusal, trace
 
     trace["context_chunks"] = reorder_for_llm(chunks)
-    result = answer_from_chunks(query, chunks)
+    emit("context", "completed", "Đã chuẩn bị các đoạn tài liệu cho LLM", count=len(chunks))
+    result = answer_from_chunks(
+        query, chunks, on_step=on_step, events=events, request_id=request_id,
+    )
     trace["generation_status"] = "cited" if result["sources"] else "refused"
     return result, trace
 
 
-def answer_from_chunks(query: str, chunks: list[dict]) -> dict:
+def answer_from_chunks(
+    query: str, chunks: list[dict], *, on_step: ProgressCallback | None = None,
+    events: list[dict] | None = None, request_id: str | None = None,
+) -> dict:
     """Use one generation policy for live chat and the A/B experiment."""
+    if events is None:
+        events = []
+    if request_id is None:
+        request_id = new_request_id()
+
+    def emit(status: str, message: str, **details) -> None:
+        record_event(events, request_id, "generation", status, message, on_step, **details)
+
     refusal = {"answer": SAFE_REFUSAL, "sources": [], "retrieval_source": "none"}
     if not chunks:
+        emit("skipped", "Không có context để tạo câu trả lời")
         return refusal
     context = format_context(reorder_for_llm(chunks))
+    emit("started", "Đang gọi LLM để tạo câu trả lời", context_count=len(chunks))
     try:
         answer = call_llm(SYSTEM_PROMPT, f"Context:\n{context}\n\nQuestion: {query}")
-    except Exception:
+    except Exception as error:
+        emit("error", "LLM lỗi; trả lời an toàn", error=safe_error(error))
         return refusal
 
-    cited_ids = set(re.findall(r"\[([^\]\n]+)\]", answer))
+    raw_citations = re.findall(r"\[([^\]\n]+)\]", answer)
+    cited_ids = set()
+    for citation in raw_citations:
+        for item in re.split(r"[,;]\s*", citation):
+            item = item.strip()
+            if item:
+                cited_ids.add(item)
     source_ids = {chunk["id"] for chunk in chunks}
     if not answer or not cited_ids or not cited_ids <= source_ids:
+        emit("refused", "LLM không trả citation hợp lệ", cited_count=len(cited_ids))
         return refusal
     method = chunks[0]["retrieval_method"]
     retrieval_source = "pageindex" if method == "pageindex" else "hybrid"
     cited_sources = [chunk for chunk in chunks if chunk["id"] in cited_ids]
+    emit("completed", "Đã xác minh citation trong câu trả lời", source_count=len(cited_sources))
     return {"answer": answer, "sources": cited_sources, "retrieval_source": retrieval_source}
 
 

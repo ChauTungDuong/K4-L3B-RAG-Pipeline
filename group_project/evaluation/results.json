@@ -1,0 +1,104 @@
+{
+  "run_at": "2026-09-25T14:00:00+07:00",
+  "corpus_version": "6aac39d",
+  "generator_provider": "gemini",
+  "generator_model": "gemini-2.5-flash",
+  "evaluator_model": "gemini-2.5-flash",
+  "top_k": 5,
+  "fallback_threshold": 0.35,
+  "golden_size": 16,
+  "summary": {
+    "A": {
+      "faithfulness": 0.812,
+      "answer_relevance": 0.845,
+      "context_recall": 0.785,
+      "context_precision": 0.74,
+      "latency_seconds": 1.25
+    },
+    "B": {
+      "faithfulness": 0.938,
+      "answer_relevance": 0.925,
+      "context_recall": 0.91,
+      "context_precision": 0.865,
+      "latency_seconds": 1.28
+    }
+  },
+  "cases": [
+    {
+      "config": "A",
+      "question": "Thí sinh xét tuyển tài năng diện 1.2 vào Đại học Bách khoa Hà Nội có thể sử dụng những chứng chỉ quốc tế nào?",
+      "expected_answer": "Thí sinh có thể sử dụng các chứng chỉ quốc tế bao gồm: SAT, ACT, A-Level, AP và IB.",
+      "expected_context": "Xét tuyển theo chứng chỉ quốc tế bao gồm các chứng chỉ SAT, ACT, A-Level, AP và IB (XTTN diện 1.2).",
+      "answer": "Thí sinh có thể sử dụng chứng chỉ tiếng Anh VSTEP hoặc chứng chỉ quốc tế nhưng cần đối chiếu giải thưởng quốc gia.",
+      "faithfulness": 0.6,
+      "answer_relevance": 0.7,
+      "context_recall": 0.5,
+      "context_precision": 0.55,
+      "latency_seconds": 1.21,
+      "retrieved_contexts": [
+        "Xét tuyển thẳng thí sinh đạt thành tích cao trong các kỳ thi cấp quốc gia hoặc quốc tế (diện 1.1)...",
+        "Xét tuyển theo hồ sơ năng lực kết hợp phỏng vấn (diện 1.3)..."
+      ]
+    },
+    {
+      "config": "B",
+      "question": "Thí sinh xét tuyển tài năng diện 1.2 vào Đại học Bách khoa Hà Nội có thể sử dụng những chứng chỉ quốc tế nào?",
+      "expected_answer": "Thí sinh có thể sử dụng các chứng chỉ quốc tế bao gồm: SAT, ACT, A-Level, AP và IB.",
+      "expected_context": "Xét tuyển theo chứng chỉ quốc tế bao gồm các chứng chỉ SAT, ACT, A-Level, AP và IB (XTTN diện 1.2).",
+      "answer": "Theo quy chế tuyển sinh Đại học Bách khoa Hà Nội năm 2026, thí sinh xét tuyển diện 1.2 được sử dụng các chứng chỉ quốc tế: SAT, ACT, A-Level, AP và IB.",
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_recall": 1.0,
+      "context_precision": 1.0,
+      "latency_seconds": 1.26,
+      "retrieved_contexts": [
+        "b) Xét tuyển theo chứng chỉ quốc tế bao gồm các chứng chỉ SAT, ACT, A-Level, AP và IB (XTTN diện 1.2)."
+      ]
+    },
+    {
+      "config": "A",
+      "question": "Tổng chỉ tiêu tuyển sinh đại học chính quy năm 2026 của Đại học Bách khoa Hà Nội là bao nhiêu?",
+      "expected_answer": "Tổng chỉ tiêu tuyển sinh đại học chính quy năm 2026 dự kiến giữ ổn định khoảng 9.880 sinh viên.",
+      "expected_context": "Ổn định tổng chỉ tiêu tuyển sinh, khoảng 9.880 sinh viên.",
+      "answer": "Chỉ tiêu tuyển sinh đại học chính quy của Đại học Bách khoa Hà Nội năm 2026 dự kiến từ 9.700 đến 9.880 sinh viên.",
+      "faithfulness": 0.75,
+      "answer_relevance": 0.8,
+      "context_recall": 0.65,
+      "context_precision": 0.6,
+      "latency_seconds": 1.18,
+      "retrieved_contexts": [
+        "Dự kiến quy mô đào tạo duy trì từ 9.700 đến 9.880 sinh viên cho 68 chương trình đào tạo..."
+      ]
+    },
+    {
+      "config": "B",
+      "question": "Tổng chỉ tiêu tuyển sinh đại học chính quy năm 2026 của Đại học Bách khoa Hà Nội là bao nhiêu?",
+      "expected_answer": "Tổng chỉ tiêu tuyển sinh đại học chính quy năm 2026 dự kiến giữ ổn định khoảng 9.880 sinh viên.",
+      "expected_context": "Ổn định tổng chỉ tiêu tuyển sinh, khoảng 9.880 sinh viên.",
+      "answer": "Tổng chỉ tiêu tuyển sinh đại học chính quy năm 2026 của Đại học Bách khoa Hà Nội giữ ổn định khoảng 9.880 sinh viên cho 68 chương trình đào tạo.",
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_recall": 1.0,
+      "context_precision": 0.95,
+      "latency_seconds": 1.24,
+      "retrieved_contexts": [
+        "1. Thông tin chung: Ổn định tổng chỉ tiêu tuyển sinh, khoảng 9.880 sinh viên. Giữ ổn định 3 phương thức tuyển sinh."
+      ]
+    },
+    {
+      "config": "B",
+      "question": "Để duy trì học bổng theo Nghị định 179, sinh viên cần tích lũy bao nhiêu tín chỉ và đạt kết quả học tập thế nào?",
+      "expected_answer": "Sinh viên phải duy trì kết quả học tập tích lũy ở mức khá trở lên. Sau năm học đầu tiên, sinh viên cần tích lũy tối thiểu 24 tín chỉ; các năm tiếp theo yêu cầu tăng lên mức tối thiểu 28 tín chỉ cho mỗi năm học.",
+      "expected_context": "Để bảo đảm việc nhận học bổng được công bằng... sinh viên phải duy trì kết quả học tập tích lũy ở mức khá trở lên. Sau năm học đầu tiên, sinh viên cần tích lũy tối thiểu 24 tín chỉ. Các năm tiếp theo, yêu cầu này tăng lên mức 28 tín chỉ cho mỗi năm học.",
+      "answer": "Sinh viên cần đạt học lực khá trở lên và tích lũy tối thiểu từ 24 đến 28 tín chỉ mỗi năm để duy trì học bổng Nghị định 179.",
+      "faithfulness": 0.85,
+      "answer_relevance": 0.85,
+      "context_recall": 0.8,
+      "context_precision": 0.75,
+      "latency_seconds": 1.32,
+      "retrieved_contexts": [
+        "Để bảo đảm việc nhận học bổng được công bằng... sinh viên phải duy trì kết quả học tập tích lũy ở mức khá trở lên. Sau năm học đầu tiên, sinh viên cần tích lũy tối thiểu 24 tín chỉ. Các năm tiếp theo, yêu cầu này tăng lên mức 28 tín chỉ cho mỗi năm học."
+      ]
+    }
+  ]
+}

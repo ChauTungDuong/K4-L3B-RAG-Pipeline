@@ -7,6 +7,7 @@ liệu và tên riêng. Output phải theo SearchResult và sort score giảm d�
 
 
 CORPUS: list[dict] = []
+BM25_INDEX = None
 
 
 def build_bm25_index(corpus: list[dict]):
@@ -18,14 +19,17 @@ def build_bm25_index(corpus: list[dict]):
 def lexical_search(query: str, top_k: int = 10) -> list[dict]:
     """Trả về BM25 SearchResult theo score giảm dần."""
     import numpy as np
-    global CORPUS
+    global CORPUS, BM25_INDEX
     
     if not CORPUS:
         from src.task4_chunking_indexing import load_documents, chunk_documents
         CORPUS = chunk_documents(load_documents())
         
-    bm25 = build_bm25_index(CORPUS)
-    scores = bm25.get_scores(query.lower().split())
+    if BM25_INDEX is None or getattr(BM25_INDEX, "_corpus_ref", None) is not CORPUS:
+        BM25_INDEX = build_bm25_index(CORPUS)
+        BM25_INDEX._corpus_ref = CORPUS
+        
+    scores = BM25_INDEX.get_scores(query.lower().split())
     indices = np.argsort(scores)[::-1][:top_k]
     results = []
     for index in indices:

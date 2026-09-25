@@ -13,6 +13,16 @@ chạy lại pipeline không tạo dữ liệu trùng. Task 5 phải dùng chung
 
 from pathlib import Path
 from functools import lru_cache
+import os
+
+try:
+    from dotenv import load_dotenv
+except ImportError:
+    def load_dotenv() -> bool:
+        return False
+
+
+load_dotenv()
 
 
 STANDARDIZED_DIR = Path(__file__).parent.parent / "data" / "standardized"
@@ -23,7 +33,7 @@ CHUNK_SIZE = 500
 CHUNK_OVERLAP = 50
 CHUNKING_METHOD = "recursive"
 
-EMBEDDING_MODEL = "all-MiniLM-L6-v2"
+EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL") or "all-MiniLM-L6-v2"
 EMBEDDING_DIM = 384
 
 COLLECTION_NAME = "rag_documents"
@@ -67,12 +77,20 @@ def load_documents() -> list[dict]:
 
 def chunk_documents(documents: list[dict]) -> list[dict]:
     """Chia Document thành chunks có id và chunk_index."""
-    from langchain_text_splitters import RecursiveCharacterTextSplitter
-    splitter = RecursiveCharacterTextSplitter(
-        chunk_size=CHUNK_SIZE,
-        chunk_overlap=CHUNK_OVERLAP,
-        separators=["\n\n", "\n", ". ", " ", ""],
-    )
+    import sys
+    dummy_keys = [k for k in ("transformers", "torch", "spacy", "nltk") if k not in sys.modules]
+    for k in dummy_keys:
+        sys.modules[k] = None
+    try:
+        from langchain_text_splitters.character import RecursiveCharacterTextSplitter
+        splitter = RecursiveCharacterTextSplitter(
+            chunk_size=CHUNK_SIZE,
+            chunk_overlap=CHUNK_OVERLAP,
+            separators=["\n\n", "\n", ". ", " ", ""],
+        )
+    finally:
+        for k in dummy_keys:
+            sys.modules.pop(k, None)
     chunks = []
     for document in documents:
         for index, text in enumerate(splitter.split_text(document["content"])):

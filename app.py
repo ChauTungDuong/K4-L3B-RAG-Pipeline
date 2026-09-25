@@ -7,6 +7,7 @@ import pandas as pd
 import streamlit as st
 
 from src.task10_generation import generate_with_trace
+from src.pipeline_observability import new_request_id, recent_events, record_event, safe_error
 from src.trace_presentation import fusion_rows, search_rows
 
 
@@ -56,6 +57,21 @@ def render_sources(sources: list[dict], title: str) -> None:
                     )
             if meta.get("page"):
                 st.caption(f"Trang PDF: {meta['page']}")
+
+
+def render_events(events: list[dict]) -> None:
+    if not events:
+        st.info("Chưa có bước xử lý nào được ghi lại.")
+        return
+    st.dataframe(
+        [{"Thời gian": event.get("time", ""), "Bước": event.get("stage", ""),
+          "Trạng thái": event.get("status", ""), "Chi tiết": event.get("message", ""),
+          "Lỗi": event.get("error", ""),
+          "Số đoạn": str(event["count"]) if "count" in event else "",
+          "ms": str(event["elapsed_ms"]) if "elapsed_ms" in event else ""}
+         for event in events],
+        hide_index=True, use_container_width=True,
+    )
 
 
 def render_trace(trace: dict, sources: list[dict]) -> None:
@@ -180,6 +196,9 @@ with st.sidebar:
     if not corpus_files:
         st.warning("Chưa có corpus tuyển sinh. Demo thật hoạt động sau khi dữ liệu được thu thập và index.")
     st.caption("Một trường · một kỳ tuyển sinh · chỉ trả lời theo nguồn đã thu thập")
+    with st.expander("Nhật ký xử lý gần đây"):
+        st.caption("File log: .cache/rag_demo.log · không ghi API key hoặc nguyên văn câu hỏi")
+        render_events(recent_events(30))
 
 overview, demo, evaluation = st.tabs(["Bài toán & pipeline", "Demo từng bước", "Đánh giá A/B"])
 with overview:
@@ -208,6 +227,11 @@ with demo:
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
+            if message["role"] == "assistant" and "events" in message:
+                with st.expander(f"Nhật ký xử lý · {message.get('request_id', '?')}"):
+                    render_events(message["events"])
+                if message.get("error"):
+                    st.error(f"Lỗi kỹ thuật: {message['error']}")
             if message["role"] == "assistant" and "trace" in message:
                 with st.expander("Xem toàn bộ pipeline của câu trả lời này"):
                     render_trace(message["trace"], message.get("sources", []))
@@ -215,19 +239,32 @@ with demo:
     query = st.chat_input("Hỏi về dữ liệu tuyển sinh đã thu thập...")
     if query:
         st.session_state.messages.append({"role": "user", "content": query})
+        events: list[dict] = []
+
+        def on_step(event: dict) -> None:
+            events.append(event)
+            st.write(f"**{event['stage']} · {event['status']}** — {event['message']}")
+
         try:
-            with st.spinner("Đang tìm tài liệu và kiểm tra trích dẫn..."):
-                result, trace = generate_with_trace(query, top_k=top_k)
+            with st.status("Đang chạy pipeline...", expanded=True) as progress:
+                result, trace = generate_with_trace(query, top_k=top_k, on_step=on_step)
+                progress.update(label="Pipeline đã hoàn tất", state="complete")
             st.session_state.messages.append({
                 "role": "assistant", "content": result["answer"],
                 "sources": result["sources"], "trace": trace,
+                "events": events, "request_id": trace.get("request_id"),
             })
         except Exception as error:
+            error_label = safe_error(error)
+            request_id = events[0]["request_id"] if events else new_request_id()
+            if not events or events[-1].get("status") != "error":
+                record_event(events, request_id, "request", "error",
+                             "Pipeline dừng do lỗi", error=error_label)
             st.session_state.messages.append({
                 "role": "assistant",
-                "content": "Không thể chạy truy xuất lúc này. Hãy kiểm tra corpus, index và cấu hình provider.",
+                "content": "Không thể chạy truy xuất lúc này. Xem nhật ký xử lý để biết pipeline dừng ở bước nào.",
+                "events": events, "request_id": request_id, "error": error_label,
             })
-            st.error(f"Chi tiết kỹ thuật: {type(error).__name__}: {error}")
         st.rerun()
 
 with evaluation:
